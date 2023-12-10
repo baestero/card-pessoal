@@ -52,7 +52,6 @@ p {
 .card-tittle p {
   font-size: 0.9rem;
   color: rgba(0, 0, 0, 0.795);
-
 }
 
 .card-descricao {
@@ -119,6 +118,10 @@ p {
   cursor: pointer;
 }
 
+.links a:hover {
+  color: grey;
+}
+
 .links div {
   display: grid;
   align-items: center;
@@ -183,13 +186,24 @@ p {
   }
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (max-width: 450px) {
   body {
     max-width: 750px;
     margin: 0 auto;
   }
 
   .card-descricao a {
-    margin: 0 200px;
+    margin: 0 px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  body {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  .card-descricao a {
+    margin: 0px 200px;
   }
 }
