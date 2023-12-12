@@ -7,7 +7,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f7f7f78a;
+  background-color: var(--fundo-1);
 }
 
 p {
@@ -16,18 +16,17 @@ p {
 }
 
 .card-intro {
-  background: rgb(255,255,255);
-  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(240,240,240,1) 100%);
+  background: var(--meuGradiente);
   margin: 20px 20px 0px 20px;
   display: flex;
   padding: 20px 0;
   justify-content: center;
   border-radius: 10px 10px 0px 0px;
-  border: 0.1px solid rgba(128, 128, 128, 0.151);
+  border: var(--border);
 }
 .card-intro img {
   display: grid;
-  justify-self: end;
+  justify-self: center;
   max-width: 100%;
   display: block;
   background-color: rgba(0, 0, 0, 0.795);
@@ -47,21 +46,21 @@ p {
 
 .card-tittle h1 {
   font-size: 1rem;
-  color: rgba(0, 0, 0, 0.795);
+  color: var(--titulos);
 }
 
 .card-tittle p {
   font-size: 0.9rem;
-  color: rgba(0, 0, 0, 0.795);
+  color: grey;
 }
 
 .card-descricao {
   margin: 0 20px;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.89);
+  background-color: var(--fundo-cards);
   border-radius: 4px 4px 10px 10px;
-  color: rgba(0, 0, 0, 0.795);
-  border: 0.1px solid rgba(128, 128, 128, 0.151);
+  color: var(--texto);
+  border: var(--border);
   border-top: none;
   padding: 20px 0;
 }
@@ -69,7 +68,7 @@ p {
 .card-descricao p {
   line-height: 1.5;
   padding-bottom: 20px;
-  color: rgba(0, 0, 0, 0.795);
+  color: var(--texto);
 }
 
 .card-descricao a {
@@ -81,17 +80,17 @@ p {
   gap: 10px;
   margin: 0 20px;
   font-size: 0.9rem;
-  background-color: black;
-  color: whitesmoke;
+  background-color: var(--btn);
+  color: var(--fundo-cards);
   border-radius: 6px 6px 6px 6px;
   border: 0.1px solid transparent;
   cursor: pointer;
 }
 
 .card-descricao a:hover {
-  background: white;
-  color: black;
-  border: 0.1px solid rgba(128, 128, 128, 0.151);
+  background: var(--fundo-cards);
+  color: var(--texto);
+  border: var(--border);
   transition: 0.6s;
 }
 
@@ -104,18 +103,18 @@ p {
   margin: 20px;
   padding: 10px 0px;
   text-align: start;
-  border: 0.1px solid rgba(128, 128, 128, 0.151);
+  border: var(--border);
   line-height: 1.4;
   gap: 12px;
   border-radius: 10px;
-  background-color: white;
+  background-color: var(--fundo-cards);
 }
 
 .links a {
   display: grid;
   align-self: center;
   font-size: 0.8rem;
-  color: rgba(0, 0, 0, 0.795);
+  color: var(--texto);
   cursor: pointer;
 }
 
@@ -126,32 +125,71 @@ p {
 .links div {
   display: grid;
   align-items: center;
-  color: black;
   align-self: center;
 }
 
 .links div p {
   font-weight: 600;
-  color: rgba(0, 0, 0, 0.795);
+  color: var(--titulos);
 }
 
 .icons {
-  background-color: red;
   padding: 10px;
   border-radius: 10px;
   display: grid;
   align-self: center;
-  color: rgba(0, 0, 0, 0.795);
-  background-color: #f8f8f8da;
-  border: 0.1px solid rgba(128, 128, 128, 0.151);
+  color: var(--texto);
+  background-color: var(--fundo-icons);
+  border: var(--border);
   margin-left: 20px;
   cursor: pointer;
 }
 
 .icons:hover {
-  background: black;
-  color: white;
+  background: var(--btn);
+  color: var(--fundo-cards);
   transition: 0.6s;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  position: relative;
+  transition: 0.9s;
+  width: 75px;
+  margin: 0 auto;
+}
+
+.container.active {
+  background-color: transparent;
+}
+
+.toggle-btn {
+  width: 70px;
+  height: 30px;
+  border: 2px solid var(--texto);
+  border-radius: 60px;
+  cursor: pointer;
+}
+
+.toggle-btn:before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: var(--texto);
+  border-radius: 50%;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  transition: left 0.5s;
+}
+
+.toggle-btn.active:before {
+  left: 44px;
 }
 
 .js .ativo1 {
@@ -172,6 +210,9 @@ p {
 }
 
 .js .ativo1:nth-child(5) {
+  animation-delay: 1.7s; /* Ajuste o atraso conforme necessário para cada seção */
+}
+.js .ativo1:nth-child(6) {
   animation-delay: 1.7s; /* Ajuste o atraso conforme necessário para cada seção */
 }
 
@@ -207,4 +248,20 @@ p {
   .card-descricao a {
     margin: 0px 200px;
   }
+}
+
+:root {
+  --fundo-1: #f7f7f78a;
+  --fundo-cards: #fff;
+  --fundo-icons: #f8f8f8da;
+  --texto: rgba(0, 0, 0, 0.795);
+  --titulos: rgba(0, 0, 0, 0.795);
+  --border: 0.1px solid rgba(128, 128, 128, 0.151);
+  --meuGradiente: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(240, 240, 240, 1) 100%
+  );
+  --btn: #000;
+  --boder-toggle: rgba(0, 0, 0, 0.795);
 }
