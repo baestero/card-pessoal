@@ -19,7 +19,7 @@ const linkedln = document
 const portfolio = document
   .querySelector("#portfolio")
   .addEventListener("click", () => {
-    window.location = "#";
+    window.open("https://baestero.github.io/porfolio-pessoal/", "_blank");
   });
 
 console.log(github, linkedln, portfolio);
