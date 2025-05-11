@@ -15,11 +15,10 @@ Criei meu próprio card de links para facilitar o contato e o acesso ao meu port
 ## 🧪 Como executar localmente
 
 1. Clone o repositório:
+
    ```bash
    git clone https://github.com/baestero/card-pessoal.git
    ```
-
-````
 
 2. Acesse a pasta do projeto:
 
@@ -37,8 +36,3 @@ Criei meu próprio card de links para facilitar o contato e o acesso ao meu port
 
 Feito com por **Leonardo Baestero**
 [GitHub](https://github.com/baestero)
-
-```
-
-```
-````
